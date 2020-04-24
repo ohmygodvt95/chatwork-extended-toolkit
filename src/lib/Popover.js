@@ -1,5 +1,5 @@
 export default class Popover {
-  constructor(element, trigger, options, callback=null) {
+  constructor(element, trigger, options, callback = null) {
     this.options = {
       // defaults
       position: Popover.BOTTOM,
@@ -33,7 +33,7 @@ export default class Popover {
       this.outsideClick();
       this.position();
       if (this.callback) {
-        this.callback()
+        this.callback();
       }
     }
   }

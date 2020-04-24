@@ -41,11 +41,31 @@ const config = {
       },
       {
         test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', {
+          loader: 'sass-loader',
+          // Requires sass-loader@^8.0.0
+          options: {
+            implementation: require('sass'),
+            sassOptions: {
+              fiber: require('fibers'),
+              indentedSyntax: true // optional
+            },
+          },
+        }],
       },
       {
         test: /\.sass$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader?indentedSyntax'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', {
+          loader: 'sass-loader?indentedSyntax',
+          // Requires sass-loader@^8.0.0
+          options: {
+            implementation: require('sass'),
+            sassOptions: {
+              fiber: require('fibers'),
+              indentedSyntax: true // optional
+            },
+          },
+        }],
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|ico)$/,

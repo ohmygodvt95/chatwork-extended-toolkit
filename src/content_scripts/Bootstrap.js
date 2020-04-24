@@ -1,13 +1,9 @@
-import { Emoticon } from './Emoticon';
-import Mention from './Mention';
+import EventHandle from './EventHandle';
 
 export class Bootstrap {
   static boot() {
-    const mention = new Mention();
-    mention.mentionHook();
-
-    const emo = new Emoticon();
-    emo.messageRenderHook();
-    emo.sendToolbarHook();
+    const eventHandle = new EventHandle();
+    eventHandle.messageRenderEvent();
+    eventHandle.sendToolbarChangeEvent();
   }
 }

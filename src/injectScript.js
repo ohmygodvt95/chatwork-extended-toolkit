@@ -13,7 +13,7 @@ function syncMentionList() {
       }),
     };
   });
-  localStorage.setItem('CWP_ROOM_USERS', JSON.stringify(toList));
+  localStorage.setItem('CWET_ROOM_USERS', JSON.stringify(toList));
 }
 
 $(window).bind('hashchange', function(e) {

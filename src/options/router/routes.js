@@ -5,4 +5,8 @@ export default [
     path: '/',
     component: Setting,
   },
+  {
+    path: '*',
+    redirect: '/',
+  },
 ];

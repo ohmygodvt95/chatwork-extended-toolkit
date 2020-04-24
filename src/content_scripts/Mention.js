@@ -8,6 +8,7 @@ export default class Mention {
 
   mentionHook() {
     Mention.newTribute();
+    Mention.attach(document.getElementById('_chatText'));
   }
 
   static attach(node) {
@@ -31,7 +32,7 @@ export default class Mention {
             <span style="padding-left: 5px;">${item.original.key}</span>
           </div>`;
       },
-      values: JSON.parse(localStorage.getItem('CWP_ROOM_USERS') || '[]'),
+      values: JSON.parse(localStorage.getItem('CWET_ROOM_USERS') || '[]'),
     });
   }
 }
