@@ -20,24 +20,26 @@ function start() {
     }
   });
 
-// start observing
+  // start observing
   observer.observe(document, {
     childList: true,
     subtree: true,
   });
 
-// lazyload image
+  // lazyload image
   window.observerImage = lozad(); // lazy loads elements with default selector as '.lozad'
 }
 
 (async function() {
-  chrome.storage.local.get({
-    CWET_EMOS_LIST: [],
-    CWET_EMOS_PACKAGE_LIST: ''
-  }, async function(item) {
-    await localStorage.setItem('CWET_EMOS_LIST', JSON.stringify(item.CWET_EMOS_LIST));
-    await localStorage.setItem('CWET_EMOS_PACKAGE_LIST', item.CWET_EMOS_PACKAGE_LIST);
-    start()
-  })
-}());
-
+  chrome.storage.local.get(
+    {
+      CWET_EMOS_LIST: [],
+      CWET_EMOS_PACKAGE_LIST: '',
+    },
+    async function(item) {
+      await localStorage.setItem('CWET_EMOS_LIST', JSON.stringify(item.CWET_EMOS_LIST));
+      await localStorage.setItem('CWET_EMOS_PACKAGE_LIST', item.CWET_EMOS_PACKAGE_LIST);
+      start();
+    }
+  );
+})();

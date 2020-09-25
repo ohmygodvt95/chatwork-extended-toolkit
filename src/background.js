@@ -25,6 +25,7 @@ chrome.runtime.onInstalled.addListener(details => {
       );
       break;
     case 'update':
+      alert('Updated successfully');
       break;
     case 'chrome_update':
     case 'shared_module_update':

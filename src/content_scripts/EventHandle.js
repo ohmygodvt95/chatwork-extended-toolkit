@@ -2,12 +2,14 @@ import $ from 'jquery';
 import { Emoticon } from './Emoticon';
 import EmoticonDialog from './EmoticonDialog';
 import Mention from './Mention';
+import Common from './Common';
 
 export default class EventHandle {
   constructor() {
     this.emoticon = new Emoticon();
     this.emoticonDialog = new EmoticonDialog();
     this.mention = new Mention();
+    this.common = new Common();
   }
 
   messageRenderEvent() {
@@ -26,6 +28,7 @@ export default class EventHandle {
         if (mutation.type === 'childList') {
           context.emoticonDialog.sendToolbarHook();
           context.mention.mentionHook();
+          context.common.sendToolbarHook();
         }
       }
     };

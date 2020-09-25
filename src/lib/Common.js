@@ -22,7 +22,7 @@ const Common = {
     th.appendChild(s);
   },
   initStickerDataSource: async function() {
-    let context = this;
+    const context = this;
     // check sync data
     chrome.storage.sync.get(
       {
@@ -51,32 +51,35 @@ const Common = {
             chrome.storage.local.set({
               CWET_EMOS_LIST: context.generateStickerData(item.stickerDataSource),
               CWET_EMOS_PACKAGE_LIST: context.generateStickerPackageList(item.stickerDataSource),
-            })
+            });
           });
         });
       }
     );
   },
   generateStickerData: function(dataSource) {
-    let data = []
-    for (let source of dataSource) {
-      data = [...data, ...source.data.map(i => {
-        return {
-          key: i.key,
-          src: i.src,
-          data_name: source.name,
-        }
-      })]
+    let data = [];
+    for (const source of dataSource) {
+      data = [
+        ...data,
+        ...source.data.map(i => {
+          return {
+            key: i.key,
+            src: i.src,
+            data_name: source.name,
+          };
+        }),
+      ];
     }
     return _.uniq(data, 'key');
   },
   generateStickerPackageList: function(dataSource) {
     let name = '';
-    for (let source of dataSource) {
-      name += `${source.name}_${source.version} `
+    for (const source of dataSource) {
+      name += `${source.name}_${source.version} `;
     }
     return name;
-  }
+  },
 };
 
 export default Common;
