@@ -15,7 +15,10 @@ export class Emoticon {
         for (const r of res) {
           const src = store.state.data.filter(o => o.key === r);
           if (src.length > 0) {
-            this.messageTransform(r, src[0], e);
+            const that = this;
+            setTimeout(function() {
+              that.messageTransform(r, src[0], e);
+            });
           }
         }
       }

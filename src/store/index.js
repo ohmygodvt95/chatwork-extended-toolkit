@@ -5,6 +5,6 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    data: JSON.parse(localStorage.getItem('YACEP_EMO_DATA') || '[]'),
+    data: JSON.parse(localStorage.getItem('CWET_EMOS_LIST') || '[]'),
   },
 });
