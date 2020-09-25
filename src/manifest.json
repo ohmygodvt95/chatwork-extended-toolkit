@@ -1,8 +1,8 @@
 {
   "name": "Chatwork Extended Toolkit",
   "description": "Extending Chatwork features, funny emoticons and useful features will help you enjoy CW.",
-  "version": "1.0.0",
-  "manifest_version": 2,
+  "version": "2.0.0",
+  "manifest_version": 3,
   "icons": {
     "48": "icons/icon_48.png",
     "128": "icons/icon_128.png"
